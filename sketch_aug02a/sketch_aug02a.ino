@@ -40,14 +40,6 @@ void loop() {
   // in inches and centimeters:
   long duration, inches, cm;
 
-  if(Serial.available()>0)
-  {
-  // The PING))) is triggered by a HIGH pulse of 2 or more microseconds.
-  // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
-  char data=Serial.read();
-  switch(data)
-  {
-  case 'A':
   digitalWrite(trigpin, LOW);
   delayMicroseconds(2);
   digitalWrite(trigpin, HIGH);
@@ -84,11 +76,7 @@ void loop() {
     digitalWrite(ledPin[0],LOW);
     delay(100);
   }
-  break;
-  default:
-  break;
-}
-}
+
 }
 long microsecondsToInches(long microseconds) {
   // According to Parallax's datasheet for the PING))), there are 73.746
